@@ -1,0 +1,14 @@
+Display a drop down with list of regions. User will select a region.
+Submit button should take them to a final page with the results from the below query.
+
+select 
+Con.Country_Name,Loc.City,Loc.State_Province,Dep.Department_Name,
+Emp.Last_Name,emp.first_name
+from regions REG, Countries CON,Locations loc, Departments dep, Employees emp
+where Con.Region_Id = Reg.Region_Id
+and Loc.Country_Id = Con.Country_Id
+and Loc.Location_Id=Dep.Location_Id
+and Dep.Department_Id=Emp.Department_Id
+and Reg.Region_Name=?
+
+Input to this query is the region from the previous page.
